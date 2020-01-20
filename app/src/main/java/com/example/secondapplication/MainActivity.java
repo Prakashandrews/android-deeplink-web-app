@@ -1,6 +1,7 @@
 package com.example.secondapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -13,17 +14,19 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Define the URI to capture the deeplink
         Uri uri = getIntent().getData();
         if(uri != null) {
             List<String> params = uri.getPathSegments();
@@ -35,6 +38,20 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
+
+        //Define the onclick to call other app
+        btn = findViewById(R.id.btn1);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tmp = getPackageManager().getLaunchIntentForPackage("com.example.starwealth");
+                startActivity(tmp);
+            }
+        });
+
+
+
     }
 
     @Override

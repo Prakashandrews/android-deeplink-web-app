@@ -8,13 +8,32 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="1174dp"
+        android:layout_height="158dp"
+        android:background="@android:color/background_dark"
+        android:clickable="true"
+        android:cursorVisible="true"
+        android:shadowColor="?attr/colorControlActivated"
+        android:text="Button"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textColorHighlight="#00ECE8E8"
+        android:textColorHint="#00ECE8E8"
+        android:textColorLink="#00ECE8E8"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
